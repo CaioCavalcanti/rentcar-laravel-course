@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Domain\Contracts\UsersContract;
 use Illuminate\Support\ServiceProvider;
+use UsersRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->registerRepositories();
+    }
+
+    private function registerRepositories() {
+        $this->app->bind(UsersContract::class, UsersRepository::class);
     }
 }
