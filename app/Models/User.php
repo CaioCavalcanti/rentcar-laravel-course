@@ -27,6 +27,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $events = [
+        'created' => 'Illuminate\Auth\Events\Registered'
+    ];
+
     public function advertisements() {
         return $this->hasMany(Advertisement::class);
     }
