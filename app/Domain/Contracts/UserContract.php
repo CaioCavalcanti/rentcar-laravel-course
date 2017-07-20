@@ -2,9 +2,7 @@
 
 namespace App\Domain\Contracts;
 
-use App\Models\User;
-
-interface UsersContract
+interface UserContract
 {
     /**
      * @param $params

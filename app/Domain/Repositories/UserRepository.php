@@ -1,9 +1,9 @@
 <?php
 
-use App\Domain\Contracts\UsersContract;
+use App\Domain\Contracts\UserContract;
 use App\Models\User;
 
-class UsersRepository implements UsersContract {
+class UserRepository implements UserContract {
     /**
      * @param $params
      * @return App\Models\User

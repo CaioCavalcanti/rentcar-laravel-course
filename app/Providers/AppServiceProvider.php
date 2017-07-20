@@ -2,13 +2,15 @@
 
 namespace App\Providers;
 
-use App\Domain\Contracts\UsersContract;
+use AdvertisementRepository;
+use App\Domain\Contracts\AdvertisementContract;
+use App\Domain\Contracts\UserContract;
 use App\Models\Advertisement;
 use App\Models\User;
 use App\Observer\AdvertisementObserver;
 use App\Observer\UserObserver;
 use Illuminate\Support\ServiceProvider;
-use UsersRepository;
+use UserRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -39,6 +41,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     private function registerRepositories() {
-        $this->app->bind(UsersContract::class, UsersRepository::class);
+        $this->app->bind(UserContract::class, UserRepository::class);
+        $this->app->bind(AdvertisementContract::class, AdvertisementRepository::class);
     }
 }
